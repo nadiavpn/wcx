@@ -42,7 +42,7 @@ Jika belum terinstall:
   ### 2. Tahap Install vps/vm
  *** 1.
 ```
-wget https://raw.githubusercontent.com/Nizwara/wcx/main/wcf.py -O wcf.py && chmod +x wcf.py && python3 wcf.py
+wget https://raw.githubusercontent.com/nadiavpn/wcx/main/wcf.py -O wcf.py && chmod +x wcf.py && python3 wcf.py
 sudo mv wcx /usr/bin/
 sudo chmod +x /usr/bin/wcx
 ```
@@ -52,7 +52,7 @@ cd /usr/bin/wcx
 ```
 *** 2. recommended to use 
 ```
-wget -O /usr/bin/wcf.py https://raw.githubusercontent.com/Nizwara/wcx/main/wcf.py && chmod +x /usr/bin/wcf.py && python3 /usr/bin/wcf.py
+wget -O /usr/bin/wcf.py https://raw.githubusercontent.com/nadiavpn/wcx/main/wcf.py && chmod +x /usr/bin/wcf.py && python3 /usr/bin/wcf.py
 ```
 ```
 cd /usr/bin/wcx
@@ -61,7 +61,7 @@ cd /usr/bin/wcx
 
 ### 3. Tahap Install Termux 
 ```
-git clone https://github.com/Nizwara/wcx.git
+git clone https://github.com/nadiavpn/wcx.git
 cd wcx
 chmod +x *
 ./menu
