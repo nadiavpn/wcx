@@ -91,9 +91,6 @@ fi
 # Membaca konfigurasi dari akun.txt
 source "$AKUN_FILE"
 
-# Membaca konfigurasi dari akun.txt
-source "$AKUN_FILE"
-
 # Validasi konfigurasi
 if [ -z "$AUTH_EMAIL" ] || [ -z "$AUTH_KEY" ] || [ -z "$ACCOUNT_ID" ] || [ -z "$YOUR_NAME" ] || [ -z "$ZONE_ID" ]; then
     echo -e "${RED}Konfigurasi API Cloudflare tidak lengkap. Pastikan file akun.txt berisi semua informasi.${NC}"
@@ -101,18 +98,12 @@ if [ -z "$AUTH_EMAIL" ] || [ -z "$AUTH_KEY" ] || [ -z "$ACCOUNT_ID" ] || [ -z "$
     exit 1
 fi
 
-# Cari file domain.txt
-DOMAIN_FILE=$(find / -type f -name "domain.txt" 2>/dev/null | head -n 1)
-
-# Cek apakah file domain.txt ditemukan
-if [ -z "$DOMAIN_FILE" ] || [ ! -f "$DOMAIN_FILE" ]; then
-    echo -e "${RED}File domain.txt tidak ditemukan di sistem!${NC}"
-    log_activity "Error: File domain.txt tidak ditemukan"
+# Cek apakah file domain.txt ada
+if [ ! -f "$DOMAIN_FILE" ]; then
+    echo -e "${RED}File $DOMAIN_FILE tidak ditemukan!${NC}"
+    log_activity "Error: File $DOMAIN_FILE tidak ditemukan"
     exit 1
 fi
-
-echo -e "${GREEN}File domain.txt ditemukan di: $DOMAIN_FILE${NC}"
-log_activity "File domain.txt ditemukan di: $DOMAIN_FILE"
 
 # Fungsi untuk validasi input subdomain (diperbarui untuk mendukung *.subdomain)
 validate_subdomain() {
